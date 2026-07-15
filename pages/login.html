@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk / Daftar — WasteLess</title>
+  <link rel="icon" href="../assets/wasteless-logo1.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOGIN WRAPPER -->
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="text-center mb-4">
+      <a href="../index.html" class="text-decoration-none">
+        <div class="fw-bold fs-3 d-inline-flex align-items-center gap-2" style="color:var(--abu-gelap)">
+          <img src="../assets/wasteless-logo1.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 50px; margin-right: 10px;"> 
+          WasteLess</div>
+      </a>
+      <p class="text-sekunder small mb-0 mt-1">Kurangi Food Waste, Maksimalkan Makananmu.</p>
+    </div>
+
+    <!-- pesan -->
+    <div id="pesan-login"></div>
+
+    <!-- TABS -->
+    <ul class="nav nav-pills nav-fill mb-4" id="tabAkun" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active fw-semibold" id="tab-login" data-bs-toggle="tab" data-bs-target="#panel-login" type="button" role="tab">
+          Masuk
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link fw-semibold" id="tab-register" data-bs-toggle="tab" data-bs-target="#panel-register" type="button" role="tab">
+          Daftar
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- PANEL LOGIN -->
+      <div class="tab-pane fade show active" id="panel-login" role="tabpanel">
+        <form id="form-login" novalidate>
+          <div class="mb-3">
+            <label for="email-login" class="form-label small fw-semibold">Email</label>
+            <input type="email" class="form-control" id="email-login" placeholder="nama@email.com" required>
+            <div class="invalid-feedback">Masukkan email yang valid.</div>
+          </div>
+          <div class="mb-3">
+            <label for="sandi-login" class="form-label small fw-semibold">Kata Sandi</label>
+            <input type="password" class="form-control" id="sandi-login" placeholder="••••••••" minlength="6" required>
+            <div class="invalid-feedback">Kata sandi minimal 6 karakter.</div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="ingat-saya">
+              <label class="form-check-label small text-sekunder" for="ingat-saya">Ingat saya</label>
+            </div>
+            <a href="#" class="small">Lupa sandi?</a>
+          </div>
+          <button type="submit" class="btn btn-hijau w-100 fw-semibold py-2" id="tombol-login" style="border-radius:10px">
+            Masuk
+          </button>
+        </form>
+      </div>
+
+      <!-- PANEL REGISTER -->
+      <div class="tab-pane fade" id="panel-register" role="tabpanel">
+        <form id="form-register" novalidate>
+          <div class="mb-3">
+            <label for="nama-register" class="form-label small fw-semibold">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama-register" placeholder="Nama kamu" required>
+            <div class="invalid-feedback">Nama wajib diisi.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email-register" class="form-label small fw-semibold">Email</label>
+            <input type="email" class="form-control" id="email-register" placeholder="nama@email.com" required>
+            <div class="invalid-feedback">Masukkan email yang valid.</div>
+          </div>
+          <div class="mb-3">
+            <label for="sandi-register" class="form-label small fw-semibold">Kata Sandi</label>
+            <input type="password" class="form-control" id="sandi-register" placeholder="••••••••" minlength="6" required>
+            <div class="invalid-feedback">Kata sandi minimal 6 karakter.</div>
+          </div>
+          <div class="mb-3">
+            <label for="konfirm-sandi" class="form-label small fw-semibold">Konfirmasi Kata Sandi</label>
+            <input type="password" class="form-control" id="konfirm-sandi" placeholder="••••••••" minlength="6" required>
+            <div class="invalid-feedback">Konfirmasi kata sandi wajib diisi.</div>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="setuju-syarat" required>
+            <label class="form-check-label small text-sekunder" for="setuju-syarat">
+              Saya menyetujui Syarat & Ketentuan WasteLess
+            </label>
+            <div class="invalid-feedback">Kamu harus menyetujui syarat & ketentuan.</div>
+          </div>
+          <button type="submit" class="btn btn-hijau w-100 fw-semibold py-2" id="tombol-register" style="border-radius:10px">
+            Daftar
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="d-flex align-items-center gap-3 my-4">
+      <hr class="flex-grow-1">
+      <span class="small text-sekunder">atau lanjutkan dengan</span>
+      <hr class="flex-grow-1">
+    </div>
+
+    <!-- SOSIAL LOGIN -->
+    <div class="d-flex flex-column gap-2">
+      <button type="button" class="sosmed-btn" data-platform="Google">
+        <i class="bi bi-google" style="color:#DB4437"></i> Masuk dengan Google
+      </button>
+      <button type="button" class="sosmed-btn" data-platform="Facebook">
+        <i class="bi bi-facebook" style="color:#1877F2"></i> Masuk dengan Facebook
+      </button>
+      <button type="button" class="sosmed-btn" data-platform="Apple">
+        <i class="bi bi-apple" style="color:#000"></i> Masuk dengan Apple
+      </button>
+    </div>
+
+    <p class="text-center small text-sekunder mt-4 mb-0">
+      <a href="../index.html"><i class="bi bi-arrow-left me-1"></i>Kembali ke Beranda</a>
+    </p>
+
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/login.js"></script>
+</body>
+</html>

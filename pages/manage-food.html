@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelola Makanan — WasteLess</title>
+  <link rel="icon" href="../assets/wasteless-logo2.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar-utama">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="../index.html">
+    <img src="../assets/wasteless-logo2.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 50px; margin-right: 20px;">
+      <div class="logo-text">Waste</div>Less
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link fw-medium" href="../index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="education.html">Edukasi</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="storage-tips.html">Tips Simpan</a></li>
+        <li class="nav-item"><a class="nav-link active fw-medium" href="manage-food.html">Kelola Makanan</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-light btn-sm px-3 fw-semibold" href="login.html" style="border-radius:50px; color: var(--hijau-sage);">
+            <i class="bi bi-person me-1" aria-hidden="true"></i> Masuk
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+ <section class="page-hero text-center">
+  <div class="container">
+    <div data-aos="fade-down">
+      <div class="hero-badge bi bi-box me-2"> Kelola Makanan</div>
+      <h1 class="fw-bold text-white mb-3" style="font-size: clamp(2rem, 4vw, 3rem);">Catat &amp; Pantau Stok Makananmu</h1>
+      <p style="color:rgba(255,255,255,0.82); max-width:560px; margin:0 auto; font-size:1.05rem;">
+        Tambahkan makanan, pantau tanggal kedaluwarsa, dan kurangi food waste mulai dari dapurmu sendiri.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RINGKASAN -->
+<section class="py-5" style="background:var(--krim)">
+  <div class="container">
+    <div class="row g-3" data-aos="fade-up">
+      <div class="col-6 col-md-3">
+        <div class="card-wasteless p-3 text-center h-100">
+          <div class="text-sekunder small fw-semibold mb-1">Total Makanan</div>
+          <div class="fs-3 fw-bold" id="ringkasan-total" style="color:var(--abu-gelap)">0</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card-wasteless p-3 text-center h-100">
+          <div class="text-sekunder small fw-semibold mb-1">Aman</div>
+          <div class="fs-3 fw-bold status-aman" id="ringkasan-aman">0</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card-wasteless p-3 text-center h-100">
+          <div class="text-sekunder small fw-semibold mb-1">Segera Habis</div>
+          <div class="fs-3 fw-bold status-segera" id="ringkasan-segera">0</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card-wasteless p-3 text-center h-100">
+          <div class="text-sekunder small fw-semibold mb-1">Kedaluwarsa</div>
+          <div class="fs-3 fw-bold status-kedaluwarsa" id="ringkasan-exp">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAFTAR MAKANAN -->
+<section class="py-5" style="background:var(--krim)">
+  <div class="container">
+
+    <div class="card-wasteless p-4" data-aos="fade-up">
+
+      <!-- toolbar -->
+      <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-wrap gap-2 flex-grow-1">
+          <div class="position-relative flex-grow-1" style="min-width:200px; max-width:280px">
+            <i class="bi bi-search position-absolute top-50 translate-middle-y ms-3 text-muted" aria-hidden="true"></i>
+            <input type="text" class="form-control ps-5" id="input-cari" placeholder="Cari nama, kategori, lokasi..." aria-label="Cari makanan" style="font-size: var(--text-sm)">
+          </div>
+          <select class="form-select" id="filter-kategori" aria-label="Filter kategori makanan" style="max-width:180px; font-size: var(--text-sm)">
+            <option value="">Semua Kategori</option>
+            <option value="Sayuran">Sayuran</option>
+            <option value="Buah">Buah</option>
+            <option value="Daging">Daging</option>
+            <option value="Makanan Matang">Makanan Matang</option>
+            <option value="Susu & Olahan">Susu &amp; Olahan</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-hijau fw-semibold px-4" data-bs-toggle="modal" data-bs-target="#modal-makanan" onclick="resetForm()" style="white-space:nowrap">
+          <i class="bi bi-plus-lg" aria-hidden="true"></i> <span class="d-none d-sm-inline ms-1">Tambah Makanan</span>
+        </button>
+      </div>
+
+      <!-- tabel -->
+      <div class="table-responsive">
+        <table class="table table-hover align-middle tabel-makanan">
+          <thead>
+            <tr>
+              <th class="text-center">No</th>
+              <th>Nama</th>
+              <th>Kategori</th>
+              <th>Tgl. Kedaluwarsa</th>
+              <th>Status</th>
+              <th>Penyimpanan</th>
+              <th>Catatan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-makanan">
+            <!-- Tabel diisi oleh crud.js dengan data-label attributes -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- empty state -->
+      <div id="empty-state" class="empty-state d-none">
+        <div class="empty-ikon"><i class="bi bi-inbox" aria-hidden="true"></i></div>
+        <h5 class="fw-bold mb-1">Belum Ada Makanan</h5>
+        <p class="small mb-0">Mulai tambahkan makanan untuk memantau tanggal kedaluwarsanya.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL TAMBAH/EDIT -->
+<div class="modal fade" id="modal-makanan" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:18px; border:none">
+      <form id="form-makanan" novalidate>
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="judul-modal">Tambah Makanan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="nama-makanan" class="form-label small fw-semibold">Nama Makanan</label>
+            <input type="text" class="form-control" id="nama-makanan" placeholder="Contoh: Brokoli" required>
+            <div class="invalid-feedback">Nama makanan wajib diisi.</div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="kategori-makanan" class="form-label small fw-semibold">Kategori</label>
+              <select class="form-select" id="kategori-makanan" required>
+                <option value="" selected disabled>Pilih kategori</option>
+                <option value="Sayuran">Sayuran</option>
+                <option value="Buah">Buah</option>
+                <option value="Daging">Daging</option>
+                <option value="Makanan Matang">Makanan Matang</option>
+                <option value="Susu & Olahan">Susu &amp; Olahan</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+              <div class="invalid-feedback">Pilih kategori makanan.</div>
+            </div>
+            <div class="col-sm-6">
+              <label for="tanggal-kedaluwarsa" class="form-label small fw-semibold">Tanggal Kedaluwarsa</label>
+              <input type="date" class="form-control" id="tanggal-kedaluwarsa" required>
+              <div class="invalid-feedback">Tanggal kedaluwarsa wajib diisi.</div>
+            </div>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <label for="lokasi-penyimpanan" class="form-label small fw-semibold">Lokasi Penyimpanan</label>
+            <select class="form-select" id="lokasi-penyimpanan" required>
+                <option value="" selected disabled>Pilih lokasi penyimpanan</option>
+                <option value="Kulkas">Chiller</option>
+                <option value="Freezer">Freezer</option>
+                <option value="Rak Dapur">Rak Dapur</option>
+                <option value="Lemari Dapur">Lemari Dapur</option>
+              </select>
+            <div class="invalid-feedback">Lokasi penyimpanan wajib diisi.</div>
+          </div>
+
+          <div class="mb-1">
+            <label for="catatan-makanan" class="form-label small fw-semibold">Catatan Tambahan <span class="text-sekunder fw-normal">(opsional)</span></label>
+            <textarea class="form-control" id="catatan-makanan" rows="2" placeholder="Contoh: Sudah dipotong, simpan dalam wadah tertutup"></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" style="border-radius:10px">Batal</button>
+          <button type="submit" class="btn btn-hijau fw-semibold px-4" id="tombol-simpan" style="border-radius:10px">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL KONFIRMASI HAPUS -->
+<div class="modal fade" id="modal-konfirmasi-hapus" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <div class="konfirmasi-ikon">
+          <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Hapus Makanan Ini?</h5>
+        <p class="text-muted small mb-4">
+          Kamu akan menghapus "<strong id="nama-makanan-dihapus"></strong>" dari daftar. Tindakan ini tidak bisa dibatalkan.
+        </p>
+        <div class="d-flex gap-2 justify-content-center">
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal" style="border-radius:10px">Batal</button>
+          <button type="button" class="btn btn-danger fw-semibold px-4" id="tombol-konfirmasi-hapus" style="border-radius:10px">
+            <i class="bi bi-trash me-1" aria-hidden="true"></i>Ya, Hapus
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-wasteless py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand fw-bold fs-5 mb-3">
+          <img src="../assets/wasteless-logo4.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 50px; margin-right: 10px;">
+           WasteLess</div>
+        <p class="small" style="color:rgba(255,255,255,0.6); max-width:280px">Platform edukasi dan pengelolaan stok makanan untuk membantu kamu mengurangi food waste setiap harinya.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-3 text-white">Fitur</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="../index.html">Beranda</a></li>
+          <li class="mb-2"><a href="manage-food.html">Kelola Makanan</a></li>
+          <li class="mb-2"><a href="education.html">Edukasi</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-3 text-white">Panduan</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="storage-tips.html">Tips Penyimpanan</a></li>
+          <li class="mb-2"><a href="education.html">Cara Mengurangi Waste</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="fw-bold mb-3 text-white">Tentang</h6>
+        <p class="small" style="color:rgba(255,255,255,0.6)">WasteLess hadir sebagai solusi sederhana untuk masalah besar. Bersama kita bisa membuat perbedaan nyata.</p>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="fs-5" aria-label="Instagram WasteLess"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="fs-5" aria-label="Twitter/X WasteLess"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+          <a href="#" class="fs-5" aria-label="YouTube WasteLess"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,0.1); margin:2rem 0 1rem">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <p class="small mb-0" style="color:rgba(255,255,255,0.4)">© 2026 WasteLess. Dibuat dengan cinta untuk bumi yang lebih baik.</p>
+      <p class="small mb-0" style="color:rgba(255,255,255,0.4)">Kurangi Food Waste, Maksimalkan Makananmu.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/crud.js"></script>
+</body>
+</html>

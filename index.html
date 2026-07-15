@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WasteLess</title>
+  <link rel="icon" href="assets/wasteless-logo2.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar-utama">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="index.html">
+      <img src="assets/wasteless-logo2.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 50px; margin-right: 20px;">
+      <div class="logo-text">Waste</div>Less
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link active fw-medium" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="pages/education.html">Edukasi</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="pages/storage-tips.html">Tips Simpan</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="pages/manage-food.html">Kelola Makanan</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-light btn-sm px-3 fw-semibold" href="pages/login.html" style="border-radius:50px; color: var(--hijau-sage);">
+            <i class="bi bi-person me-1"></i> Masuk
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="position-relative vh-100 d-flex align-items-center justify-content-center overflow-hidden bg-dark">
+  
+  <video class="hero-video" loop muted playsinline id="heroVideo">
+    <source src="assets/7889713-uhd_4096_2160_25fps.mp4" type="video/mp4">
+  </video>
+  
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, rgba(44,44,44,0.6) 0%, rgba(107,142,111,0.5) 100%); z-index: 1;"></div>
+  
+  <div class="container position-relative text-center pt-5" style="z-index: 2;">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        
+        <div class="badge bg-white text-dark rounded-pill px-3 py-2 mb-2 fw-semibold shadow-sm" data-aos="fade-down">
+          <img src="assets/wasteless-logo1.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 20px; margin-right: 5px;">
+          <span style="vertical-align: middle;">Peduli Lingkungan, Mulai dari Dapur</span>
+        </div>
+        
+        <h1 class="display-4 fw-bold text-white mb-4 text-shadow" data-aos="fade-up" data-aos-delay="100">
+          Kurangi Food Waste,<br><span class="text-light opacity-75">Maksimalkan</span> Makananmu.
+        </h1>
+        
+        <p class="fs-5 text-white-50 mb-5 fw-light mx-auto" style="max-width: 650px;" data-aos="fade-up" data-aos-delay="200">
+          Jutaan ton makanan terbuang sia-sia setiap tahunnya di Indonesia. Jadilah bagian dari solusi dengan perubahan kecil dari rumahmu.
+        </p>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="300">
+          <a href="pages/manage-food.html" class="btn btn-light rounded-pill px-4 py-3 fw-semibold shadow-sm" style="color: var(--hijau-sage);">
+            <i class="bi bi-box me-2"></i>Kelola Makananku
+          </a>
+          <a href="pages/education.html" class="btn btn-outline-light rounded-pill px-4 py-3 fw-medium">
+            Pelajari Lebih Lanjut
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAKTA FOOD WASTE ── -->
+<section class="py-5" style="background:var(--bg-sekunder)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">Fakta mengejutkan</div>
+      <h2 class="section-judul">Mengapa Food Waste Jadi Masalah Besar?</h2>
+      <div class="divider-hijau mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-wasteless p-4 h-100">
+          <div class="fakta-ikon"><i class="bi bi-globe2"></i></div>
+          <h5 class="fw-bold mb-2">Masalah Global</h5>
+          <p class="text-muted small mb-0">Sekitar 1/3 dari seluruh makanan yang diproduksi di dunia terbuang percuma — sekitar 1,3 miliar ton per tahun menurut FAO.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-wasteless p-4 h-100">
+          <div class="fakta-ikon"><i class="bi bi-geo-alt-fill"></i></div>
+          <h5 class="fw-bold mb-2">Indonesia Darurat</h5>
+          <p class="text-muted small mb-0">Indonesia menjadi salah satu negara penghasil food waste terbesar kedua di dunia, dengan kerugian sekitar Rp550 triliun per tahun.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-wasteless p-4 h-100">
+          <div class="fakta-ikon"><i class="bi bi-thermometer-half"></i></div>
+          <h5 class="fw-bold mb-2">Dampak Iklim</h5>
+          <p class="text-muted small mb-0">Makanan yang membusuk menghasilkan metana — gas rumah kaca 25× lebih kuat dari CO₂. Food waste menyumbang 7,8% emisi global.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MANFAAT ── -->
+<section class="py-5" style="background:var(--krim)">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="section-label">Manfaat nyata</div>
+        <h2 class="section-judul mb-4">Kenapa Harus Kelola Stok Makananmu?</h2>
+        <p class="text-muted mb-4">Dengan mencatat dan memantau stok makanan di rumah, kamu bisa menghemat uang, mengurangi sampah, dan berkontribusi pada lingkungan yang lebih sehat.</p>
+        <a href="pages/manage-food.html" class="btn btn-hijau">
+          Mulai Sekarang <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="card-wasteless p-4">
+              <div class="card-ikon" style="background:rgba(107,142,111,0.12)"><i class="bi bi-wallet2"></i></div>
+              <h6 class="fw-bold mb-1">Hemat Pengeluaran</h6>
+              <p class="text-muted small mb-0">Rata-rata keluarga Indonesia bisa menghemat hingga Rp3 juta per tahun dengan mengelola makanan lebih baik.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card-wasteless p-4">
+              <div class="card-ikon" style="background:rgba(107,142,111,0.12)"><i class="bi bi-recycle"></i></div>
+              <h6 class="fw-bold mb-1">Kurangi Sampah</h6>
+              <p class="text-muted small mb-0">Setiap makanan yang kamu selamatkan berarti satu langkah kecil untuk bumi yang lebih bersih dan lebih lestari.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card-wasteless p-4">
+              <div class="card-ikon" style="background:rgba(107,142,111,0.12)"><i class="bi bi-clipboard-check"></i></div>
+              <h6 class="fw-bold mb-1">Belanja Lebih Cerdas</h6>
+              <p class="text-muted small mb-0">Tahu apa yang ada di kulkas membuat belanja lebih terencana dan tidak berlebihan.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card-wasteless p-4">
+              <div class="card-ikon" style="background:rgba(107,142,111,0.12)">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                width="25" 
+                height="25" 
+                fill="currentColor" 
+                class="bi bi-leaf" 
+                viewBox="0 0 16 16">
+                <path d="M1.4 1.7c.216.289.65.84 1.725 1.274 1.093.44 2.884.774 5.834.528l.37-.023c1.823-.06 3.117.598 3.956 1.579C14.16 6.082 14.5 7.41 14.5 8.5c0 .58-.032 1.285-.229 1.997q.198.248.382.54c.756 1.2 1.19 2.563 1.348 3.966a1 1 0 0 1-1.98.198c-.13-.97-.397-1.913-.868-2.77C12.173 13.386 10.565 14 8 14c-1.854 0-3.32-.544-4.45-1.435-1.125-.887-1.89-2.095-2.391-3.383C.16 6.62.16 3.646.509 1.902L.73.806zm-.05 1.39c-.146 1.609-.008 3.809.74 5.728.457 1.17 1.13 2.213 2.079 2.961.942.744 2.185 1.22 3.83 1.221 2.588 0 3.91-.66 4.609-1.445-1.789-2.46-4.121-1.213-6.342-2.68-.74-.488-1.735-1.323-1.844-2.308-.023-.214.237-.274.38-.112 1.4 1.6 3.573 1.757 5.59 2.045 1.227.215 2.21.526 3.033 1.158.058-.39.075-.782.075-1.158 0-.91-.288-1.988-.975-2.792-.626-.732-1.622-1.281-3.167-1.229l-.316.02c-3.05.253-5.01-.08-6.291-.598a5.3 5.3 0 0 1-1.4-.811"/>
+              </svg></div>
+              <h6 class="fw-bold mb-1">Gaya Hidup Berkelanjutan</h6>
+              <p class="text-muted small mb-0">Menjadi bagian dari gerakan global menuju konsumsi yang lebih bertanggung jawab.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CARA KERJA ── -->
+<section class="py-5" style="background:var(--bg-sekunder)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">Cara penggunaan</div>
+      <h2 class="section-judul">Mudah Digunakan dalam 3 Langkah</h2>
+      <div class="divider-hijau mx-auto"></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center p-4">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+               style="width:72px;height:72px;background:var(--hijau-sage);font-size:1.8rem;color:#fff;font-weight:700">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Catat Makananmu</h5>
+          <p class="text-muted small">Tambahkan makanan beserta tanggal kedaluwarsa dan lokasi penyimpanannya ke dalam daftar.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center p-4">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+               style="width:72px;height:72px;background:var(--hijau-sage);font-size:1.8rem;color:#fff;font-weight:700">
+            <i class="bi bi-eye"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Pantau Status</h5>
+          <p class="text-muted small">Lihat makanan mana yang hampir kedaluwarsa dan prioritaskan penggunaannya lebih dahulu.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-center p-4">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+               style="width:72px;height:72px;background:var(--hijau-sage);font-size:1.8rem;color:#fff;font-weight:700">
+            <i class="bi bi-check-circle"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Kurangi Pemborosan</h5>
+          <p class="text-muted small">Dengan informasi yang tepat, tidak ada lagi makanan yang terbuang sia-sia di rumahmu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="py-5" style="background:var(--krim)">
+  <div class="container" data-aos="fade-up">
+    <div class="cta-banner p-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <div class="section-label" style="color:rgba(255,255,255,0.8)">Mulai sekarang</div>
+          <h2 class="fw-bold text-white mb-3">Siap Menjadi Agen Perubahan?</h2>
+          <p class="mb-0" style="color:rgba(255,255,255,0.85); font-size: var(--text-sm)">Bergabunglah dengan ribuan pengguna yang sudah aktif mengurangi food waste di Indonesia.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end d-flex flex-wrap gap-3 justify-content-lg-end">
+          <a href="pages/manage-food.html" class="btn btn-light fw-semibold" style="color:var(--hijau-sage)">
+            <i class="bi bi-box me-2"></i><span class="d-none d-sm-inline">Kelola Makanan</span>
+          </a>
+          <a href="pages/education.html" class="btn btn-outline-light fw-semibold">
+            Pelajari Dulu
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer-wasteless py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand fw-bold fs-5 mb-3">
+          <img src="assets/wasteless-logo4.svg" alt="WasteLess Logo" class="img-fluid" style="max-height: 50px; margin-right: 10px;"> WasteLess</div>
+        <p class="small" style="color:rgba(255,255,255,0.6); max-width:280px">
+          Platform edukasi dan pengelolaan stok makanan untuk membantu kamu mengurangi food waste setiap harinya.
+        </p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-3 text-white">Fitur</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="index.html">Beranda</a></li>
+          <li class="mb-2"><a href="pages/manage-food.html">Kelola Makanan</a></li>
+          <li class="mb-2"><a href="pages/education.html">Edukasi</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-3 text-white">Panduan</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="pages/storage-tips.html">Tips Penyimpanan</a></li>
+          <li class="mb-2"><a href="pages/education.html">Cara Mengurangi Waste</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="fw-bold mb-3 text-white">Tentang</h6>
+        <p class="small" style="color:rgba(255,255,255,0.6)">
+          WasteLess hadir sebagai solusi sederhana untuk masalah besar. Bersama kita bisa membuat perbedaan nyata.
+        </p>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,0.1); margin:2rem 0 1rem">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <p class="small mb-0" style="color:rgba(255,255,255,0.4)">© 2026 WasteLess. Dibuat dengan cinta untuk bumi yang lebih baik.</p>
+      <p class="small mb-0" style="color:rgba(255,255,255,0.4)">Kurangi Food Waste, Maksimalkan Makananmu.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // autoplay hanya untuk layar desktop, untuk mobile tidak autoplay
+const video = document.getElementById('heroVideo');
+if (video) {
+  if (window.innerWidth >= 768) {
+    video.autoplay = true;
+    // Coba mainkan video, jika gagal (misalnya karena autoplay diblokir), tangani kesalahan
+    video.play().catch(() => {});
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
