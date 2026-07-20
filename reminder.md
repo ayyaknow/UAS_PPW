@@ -1,8 +1,8 @@
 
-Agil - Index.html dan CSS Footer
-Nanda - storage-tips.html
-Rere - education.html
-Ayya - Java Script, login.html, manage-food.html, dan Navbar
+Pandu Agil Pamungkas (25.12.3539) - Index.html dan CSS Footer
+Nanda Gustika (25.12.3497) - storage-tips.html
+Regina Davide Bonggoibo (25.12.3522) - education.html
+Lathifah Putri Ayuningtyas (25.12.3525) - Java Script, login.html, manage-food.html, dan Navbar
 ALL - Logo dan Video 
 
 Nama WasteLess sendiri bermakna "mengurangi pemborosan," yang sejalan dengan pesan utama kami: "Kurangi Food Waste, Maksimalkan Makananmu." Intinya, platform ini ingin menumbuhkan kesadaran lingkungan yang bisa langsung diterapkan dari dapur rumah tangga. WasteLess dirancang bukan sekadar wadah edukasi, melainkan juga sebagai asisten digital harian yang membantu mengelola stok makanan dengan lebih bijak.
